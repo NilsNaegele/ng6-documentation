@@ -1,0 +1,19 @@
+<h2>My Technologies</h2>
+<div>
+  <label>Technology name:
+    <input #technologyName>
+  </label>
+  <button (click)="addTechnology(technologyName.value); technologyName.value = '';">
+    add
+  </button>
+</div>
+<ul class="technologies">
+  <li *ngFor="let technology of technologies"
+      [class.selected]="selectedTechnology === technology">
+      <a routerLink="/detail/{{technology.id}}">
+        <span class="badge">{{ technology.id }}</span> {{ technology.name }}
+      </a>
+      <button class="delete" title="delete technology"
+              (click)="deleteTechnology(technology)">x</button>
+  </li>
+</ul>

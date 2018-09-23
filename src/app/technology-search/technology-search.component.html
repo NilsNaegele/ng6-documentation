@@ -1,0 +1,13 @@
+<div class="technology-search">
+      <h4>Technology Search</h4>
+      <input #searchBox id="search-box" (keyup)="search(searchBox.value)">
+
+      <ul class="search-result">
+          <li *ngFor="let technology of technologies$ | async">
+              <a routerLink="/detail/{{technology.id}}">
+                {{ technology.name }}
+              </a>
+          </li>
+      </ul>
+
+</div>
